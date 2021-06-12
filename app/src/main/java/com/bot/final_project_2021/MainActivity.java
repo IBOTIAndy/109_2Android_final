@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.bot.final_project_2021.RoomDatabase.MyData;
+
 public class MainActivity extends AppCompatActivity {
+    MyData nowSelectData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
