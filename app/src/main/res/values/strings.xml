@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">final_project_2021</string>
     <!--main-->
-    <string name="button_add_data">新增支出/收入</string>
+    <string name="button_add_data">新增資料</string>
     <string name="button_history">帳簿紀錄</string>
     <string name="button_settings">設定</string>
     <string name="income">收入</string>
