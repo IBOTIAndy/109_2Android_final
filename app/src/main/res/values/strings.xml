@@ -7,4 +7,7 @@
     <string name="income">收入</string>
     <string name="outcome">支出</string>
     <string name="balance">結餘</string>
+
+    <!--moneyLayout-->
+    <string name="app_name_moneyLayout">帳務紀錄</string>
 </resources>
