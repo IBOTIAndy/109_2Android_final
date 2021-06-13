@@ -1,26 +1,40 @@
 package com.bot.final_project_2021;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.bot.final_project_2021.RoomDatabase.MyData;
+import com.bot.final_project_2021.RoomDatabase.Data;
+import com.bot.final_project_2021.RoomDatabase.DataRoomDatabase;
+
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-    MyData nowSelectData;
+    Data nowSelectData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DataRoomDatabase db = Room.databaseBuilder(getApplicationContext(), DataRoomDatabase.class, "myDatabase").build();
+
+
+
     }
 
     public void toAddData(View view){
+        Intent intent = new Intent(this, AddIOActivity.class);
+        if(intent.resolveActivity(getPackageManager()) != null){
+            startActivity(intent);
+        }
+        else{
+            Log.d("Intent", "Can't go to add_data.");
+        }
         Toast.makeText(this, "It can go to add data.", Toast.LENGTH_SHORT).show();
     }
 

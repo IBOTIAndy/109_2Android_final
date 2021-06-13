@@ -6,7 +6,7 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "money_table")
-public class MyData {
+public class Data {
 
     @PrimaryKey(autoGenerate = true)    //設置是否使ID自動累加 -> (1, 2, 3, ...)
     @NonNull
@@ -14,12 +14,11 @@ public class MyData {
     @NonNull
     private String date;        //日期
     private String tag;         //分類
-    @NonNull
     private int money;          //錢
     private Boolean moneyType;  //收入/支出, moneyType==1 -> 收入; moneyType==0 -> 支出
     private String text;        //描述
 
-    public MyData(String date, String tag, int money, Boolean moneyType, String text){
+    public Data(String date, String tag, int money, Boolean moneyType, String text){
         this.date = date;
         this.tag = tag;
         this.money = money;
@@ -27,7 +26,7 @@ public class MyData {
         this.text = text;
     }
     @Ignore
-    public MyData(int id, String date, String tag, int money, Boolean moneyType, String text){
+    public Data(int id, String date, String tag, int money, Boolean moneyType, String text){
         this.id = id;
         this.date = date;
         this.tag = tag;
@@ -41,7 +40,7 @@ public class MyData {
     public void setId(int id){ this.id = id; }
 
     public String getDate(){ return date; }
-    public void setDate(String date){ this.date = date; }
+    public void setDate(@NonNull String date){ this.date = date; }
 
     public String getTag() { return tag; }
     public void setTag(String tag) { this.tag = tag; }
