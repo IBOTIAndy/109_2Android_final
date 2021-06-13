@@ -1,16 +1,20 @@
 package com.bot.final_project_2021.RoomDatabase;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "moneyTable")
+@Entity(tableName = "money_table")
 public class MyData {
 
     @PrimaryKey(autoGenerate = true)    //設置是否使ID自動累加 -> (1, 2, 3, ...)
+    @NonNull
     private int id;             //編號
+    @NonNull
     private String date;        //日期
     private String tag;         //分類
+    @NonNull
     private int money;          //錢
     private Boolean moneyType;  //收入/支出, moneyType==1 -> 收入; moneyType==0 -> 支出
     private String text;        //描述

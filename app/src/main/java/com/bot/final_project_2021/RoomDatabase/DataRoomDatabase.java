@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 import androidx.room.migration.Migration;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@androidx.room.Database(entities = {MyData.class}, version = 2, exportSchema = true)
+@androidx.room.Database(entities = {MyData.class}, version = 1, exportSchema = true)
 public abstract class Database extends RoomDatabase {
     public static final String _dbName = "RecordData.db";
     private static volatile Database instance;
