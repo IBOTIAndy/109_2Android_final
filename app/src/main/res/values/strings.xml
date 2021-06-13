@@ -7,4 +7,21 @@
     <string name="income">收入</string>
     <string name="outcome">支出</string>
     <string name="balance">結餘</string>
+
+    <!--addIoActivity-->
+    <string name="app_name_addIOActivity">新增支出/收入</string>
+    <string name="title_date">日期：</string>
+    <string name="title_tag">分類：</string>
+    <string name="title_money">金額：</string>
+    <string name="title_text">描述：</string>
+    <string name="radio_income">收入</string>
+    <string name="radio_outcome">支出</string>
+    <string name="hint_date">2021/06/04</string>
+    <string name="hint_tag">食品, 交通..</string>
+    <string name="hint_money">149</string>
+    <string name="hint_text">便當, 公車費, 油錢, 生活用品等..</string>
+    <string name="button_add">新增資料</string>
+
+    <!--moneyLayout-->
+    <string name="app_name_moneyLayout">帳務紀錄</string>
 </resources>
