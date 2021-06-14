@@ -18,7 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddIoActivity"></activity>
+        <activity android:name=".AddIoActivity"
+            android:label="@string/addData_title">
+
+        </activity>
     </application>
 
 </manifest>

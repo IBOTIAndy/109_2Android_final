@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">final_project_2021</string>
+    <string name="app_name">帳務紀錄簿</string>
 
     <string name="main_title">帳本</string>
+    <string name="addData_title">新增資料</string>
+
+    <!--Extra 傳輸資料使用-->
     <string name="extra_year">DataYear</string>
     <string name="extra_month">DataMonth</string>
     <string name="extra_day">DataDay</string>
@@ -9,6 +12,7 @@
     <string name="extra_money">DataMoney</string>
     <string name="extra_type">DataType</string>
     <string name="extra_text">DataText</string>
+
     <!--main-->
     <string name="button_add_data">新增資料</string>
     <string name="item_title_detail">帳務詳細</string>
