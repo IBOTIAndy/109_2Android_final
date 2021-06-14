@@ -4,14 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -34,7 +32,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.app_name);
+        toolbar.setTitle(R.string.main_title);
+        toolbar.inflateMenu(R.menu.menu_main);
+//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//
+//
+//            }
+//        });
+
         toolbar.showContextMenu();
 
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
@@ -99,10 +106,12 @@ public class MainActivity extends AppCompatActivity {
 //        startActivity(intent);
 //        //Toast.makeText(this, "It can go to add data.", Toast.LENGTH_SHORT).show();
 //    }
-    public void toHistory(View view){
-        Toast.makeText(this, "It can go to History.", Toast.LENGTH_SHORT).show();
+    public Boolean toDetail(MenuItem item){
+        Toast.makeText(this, "It can go to look Detail.", Toast.LENGTH_SHORT).show();
+        return false;
     }
-    public void toSettings(View view){
+    public Boolean toSettings(MenuItem item){
         Toast.makeText(this, "It can go to Settings.", Toast.LENGTH_SHORT).show();
+        return false;
     }
 }
