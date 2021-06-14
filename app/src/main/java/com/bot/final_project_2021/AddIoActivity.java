@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 
+import java.util.Calendar;
+
 public class AddIoActivity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY = "com.example.android.roommoneyssample.REPLY";
@@ -30,17 +32,37 @@ public class AddIoActivity extends AppCompatActivity {
         mMoneyView = findViewById(R.id.editTextMoney);
         mTypeGroup = findViewById(R.id.moneyTypeGroup);
         mTextView = findViewById(R.id.editTextText);
+        int mYear, mMonth, mDay;
+
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+        String date = Integer.toString(mYear) + "/";    // (YYYY/ )
+        if (mMonth < 10) { //(YYYY/0 )
+            date += "0";
+        }
+        date += Integer.toString(mMonth) + "/"; //(YYYY/MM )
+        if (mDay < 10) {  //(YYYY/MM/0 )
+            date += "0";
+        }
+        date += Integer.toString(mDay);   //(YYYY/MM/DD)
+        mDateView.setText(date);
 
         final Button button = findViewById(R.id.button_add_data);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int[] dateTemp = getDate(mDateView.getText().toString());
                 Intent replyIntent = new Intent();
                 if(TextUtils.isEmpty(mDateView.getText()) || TextUtils.isEmpty(mMoneyView.getText())){
                     setResult(RESULT_CANCELED, replyIntent);
                 }
                 else{
-                    replyIntent.putExtra(getString(R.string.extra_date), mDateView.getText().toString());
+                    replyIntent.putExtra(EXTRA_REPLY, "A");
+                    replyIntent.putExtra(getString(R.string.extra_year), dateTemp[0]);
+                    replyIntent.putExtra(getString(R.string.extra_month), dateTemp[1]);
+                    replyIntent.putExtra(getString(R.string.extra_day), dateTemp[2]);
                     replyIntent.putExtra(getString(R.string.extra_tag), mTagView.getText().toString());
                     replyIntent.putExtra(getString(R.string.extra_money), Integer.parseInt(mMoneyView.getText().toString()));
                     replyIntent.putExtra(getString(R.string.extra_type), getMoneyType());
@@ -61,5 +83,16 @@ public class AddIoActivity extends AppCompatActivity {
         }
         Log.e("Add I/O activity", "function: \'getMoneyType\' Error");
         return false;
+    }
+
+    private int[] getDate(String date){
+        int[] x = {0, 0, 0};
+        int i;
+        String[] temp;
+        temp = date.split("[/]");
+        for(i=0; i < 3; i++) {
+            x[i] = Integer.parseInt(temp[i]);
+        }
+        return x;
     }
 }

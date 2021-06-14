@@ -40,7 +40,7 @@ public class MoneyListAdapter extends RecyclerView.Adapter<MoneyListAdapter.Mone
         string += "日期: " + Integer.toString(current.getDate_year())
                 + "/" + Integer.toString(current.getDate_month())
                 + "/" + Integer.toString(current.getDate_day())
-                + " [" + current.getTag() + "] ";
+                + " [" + current.getTag() + "]\n";
         if(current.getType()){
             string += "收入: ";
         }
@@ -48,7 +48,7 @@ public class MoneyListAdapter extends RecyclerView.Adapter<MoneyListAdapter.Mone
             string += "支出: ";
         }
         string += Integer.toString(current.getMoney()) + "$"
-                + "備註: " + current.getText();
+                + "\n備註: " + current.getText();
 
         holder.moneyItemView.setText(string);
     }

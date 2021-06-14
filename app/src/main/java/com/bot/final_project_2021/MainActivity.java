@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -73,6 +74,24 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == NEW_MONEY_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
+            int mYear = data.getIntExtra(getString(R.string.extra_year), 2021);
+            int mMonth = data.getIntExtra(getString(R.string.extra_month), 6);
+            int mDay = data.getIntExtra(getString(R.string.extra_day), 4);
+            String mTag = data.getStringExtra(getString(R.string.extra_tag));
+            int mMoney = data.getIntExtra(getString(R.string.extra_money), 120);
+            Boolean mType = data.getBooleanExtra(getString(R.string.extra_type), false);
+            String mText = data.getStringExtra(getString(R.string.extra_text));
+            Money money = new Money(mYear, mMonth, mDay, mTag, mMoney, mType, mText);
+            mMoneyViewModel.insert(money);
+        }
+        else{
+            Toast.makeText(getApplicationContext(), R.string.empty_not_saved, Toast.LENGTH_LONG).show();
+        }
     }
 
 //    public void toAddData(View view){
