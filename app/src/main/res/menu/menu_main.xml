@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_detail"
+        android:onClick="toDetail"
         android:orderInCategory="100"
         android:title="@string/item_title_detail"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
     <item
         android:id="@+id/action_settings"
+        android:onClick="toSettings"
         android:orderInCategory="100"
         android:title="@string/item_title_settings"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
 </menu>

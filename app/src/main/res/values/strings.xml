@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">final_project_2021</string>
 
+    <string name="main_title">帳本</string>
     <string name="extra_year">DataYear</string>
     <string name="extra_month">DataMonth</string>
     <string name="extra_day">DataDay</string>
