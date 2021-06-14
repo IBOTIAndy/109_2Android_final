@@ -1,9 +1,9 @@
 package com.bot.final_project_2021.Database;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
-import android.arch.persistence.room.Database;
-import android.arch.persistence.room.Room;
-import android.arch.persistence.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
+import androidx.room.Database;
+import androidx.room.Room;
+import androidx.room.RoomDatabase;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -56,7 +56,7 @@ public abstract class MoneyRoomDatabase extends RoomDatabase {
         protected Void doInBackground(final Void... params){
             mDao.deleteAll();
 
-            for(i=0; i<= mYear.length - 1; i++){
+            for(i=0; i<= mTag.length - 1; i++){
                 Money money = new Money(mYear[i], mMonth[i], mDay[i], mTag[i], mMoney[i], mType[i], mText[i]);
                 mDao.insert(money);
             }

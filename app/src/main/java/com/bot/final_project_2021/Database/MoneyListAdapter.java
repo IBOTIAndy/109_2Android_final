@@ -25,7 +25,7 @@ public class MoneyListAdapter extends RecyclerView.Adapter<MoneyListAdapter.Mone
     private final LayoutInflater mInflater;
     private List<Money> mMoneys;
 
-    MoneyListAdapter(Context context){ mInflater = LayoutInflater.from(context); }
+    public MoneyListAdapter(Context context){ mInflater = LayoutInflater.from(context); }
 
     @Override
     public MoneyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
@@ -33,12 +33,12 @@ public class MoneyListAdapter extends RecyclerView.Adapter<MoneyListAdapter.Mone
         return new MoneyViewHolder(itemView);
     }
 
-    @Override public void onBindViewHolder(MoneyViewHolder holder, int position){
+    @Override public void onBindViewHolder(MoneyViewHolder holder, int position){   //設定recyclerview item
         Money current = mMoneys.get(position);
-        holder.moneyItemView.setText(current.getMoney());
+        holder.moneyItemView.setText(current.getTag());
     }
 
-    void setMoneys(List<Money> moneys){
+    public void setMoneys(List<Money> moneys){
         mMoneys = moneys;
         notifyDataSetChanged();
     }

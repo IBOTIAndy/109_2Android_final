@@ -17,7 +17,7 @@ public class MoneyViewModel extends AndroidViewModel {
         mAllMoneys = mRepository.getAllMoneys();
     }
 
-    LiveData<List<Money>> getAllMoneys() { return mAllMoneys; }
+    public LiveData<List<Money>> getAllMoneys() { return mAllMoneys; }
 
     public void insert(Money money) { mRepository.insert(money); }
 }
