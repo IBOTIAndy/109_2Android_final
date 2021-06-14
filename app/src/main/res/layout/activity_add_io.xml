@@ -38,12 +38,12 @@
         android:layout_height="wrap_content"
         android:text="@string/title_tag"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/spinnerTag"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextTag"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/spinnerTag" />
+        app:layout_constraintTop_toTopOf="@+id/editTextTag" />
 
     <EditText
-        android:id="@+id/spinnerTag"
+        android:id="@+id/editTextTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -70,8 +70,8 @@
         android:ems="14"
         android:hint="@string/hint_money"
         android:inputType="date"
-        app:layout_constraintStart_toStartOf="@+id/spinnerTag"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTag" />
+        app:layout_constraintStart_toStartOf="@+id/editTextTag"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTag" />
 
     <RadioGroup
         android:id="@+id/moneyTypeGroup"
@@ -119,12 +119,11 @@
         app:layout_constraintTop_toTopOf="@+id/editTextText" />
 
     <Button
-        android:id="@+id/addData"
+        android:id="@+id/button_add_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginEnd="24dp"
-        android:onClick="addNewData"
         android:text="@string/button_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
