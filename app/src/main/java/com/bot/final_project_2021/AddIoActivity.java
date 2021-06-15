@@ -34,6 +34,7 @@ public class AddIoActivity extends AppCompatActivity {
         mTextView = findViewById(R.id.editTextText);
         int mYear, mMonth, mDay;
 
+        /** 抓取目前手機時間 */
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);

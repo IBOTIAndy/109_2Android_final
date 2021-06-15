@@ -34,13 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.main_title);
         toolbar.inflateMenu(R.menu.menu_main);
-//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//
-//
-//            }
-//        });
+        toolbar.setTitleTextColor(getColor(R.color.white));
 
         toolbar.showContextMenu();
 
